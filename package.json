@@ -1,6 +1,6 @@
 {
     "name": "homebridge-unitec",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Unitec plugin for homebridge to control RF outlets.",
     "license": "MIT",
     "keywords": [
