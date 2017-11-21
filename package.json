@@ -1,21 +1,19 @@
 {
-    "name": "homebridge-rfoutlets",
-    "version": "0.1.0",
-    "description": "RF (433MHz) outlet remote control plugin for homebridge: https://github.com/nfarina/homebridge",
-    "license": "(MIT OR ISC)",
+    "name": "homebridge-unitec",
+    "version": "0.0.1",
+    "description": "Unitec plugin for homebridge to control RF outlets.",
+    "license": "MIT",
     "keywords": [
-        "homebridge-plugin", "433", "433MHz", "Raspberry", "Pi", "rf"
+        "homebridge-plugin"
     ],
     "engines": {
-        "node": ">=0.12.0",
-        "homebridge": ">=0.2.0"
+        "node": ">=4.3.2",
+        "homebridge": ">=0.4.29"
     },
-    "author": {
-        "name": "wstameris"
-    },
+    "author": "@Piets",
     "repository": {
         "type": "git",
-        "url": "git://github.com/wstameris/homebridge-rfoutlets"
+        "url": "git://github.com/Piets/homebridge-unitec.git"
     },
     "dependencies": {
         "limiter": "1.x"

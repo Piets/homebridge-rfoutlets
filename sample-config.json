@@ -11,15 +11,13 @@
     "platforms": [],
 
     "accessories": [{
-        "accessory": "RFOutlet",
+        "accessory": "Unitec",
         "name": "Window Fan",
         "type": "Fan",
         "manufacturer": "Lasko",
         "model": "Weather Shield Box Fan",
         "serial": " ",
-        "rf_on": 4480259,
-        "rf_off": 4480268,
-        "pulselength": "",
-        "pin": ""
+        "rf_on": "0010 1100 0011 1110 1000 1111",
+        "rf_off": "0010 0010 0110 0001 0101 1111"
     }]
 }

@@ -6,8 +6,8 @@ module.exports = function(homebridge) {
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
     limiter = new RateLimiter(1, 200); //limit requests to one per 200ms
-    homebridge.registerAccessory("homebridge-rfoutlets",
-        "RFOutlet",
+    homebridge.registerAccessory("homebridge-unitec",
+        "Unitec",
         RFOutletAccessory);
 }
 
@@ -25,21 +25,9 @@ function RFOutletAccessory(log, config) {
     this.rf_on = config["rf_on"];
     this.rf_off = config["rf_off"];
 
-    if (config["pulselength"]) {
-        this.pulselength = config["pulselength"];
-    } else {
-        this.pulselength = 189; //Default to a pulse length of 189
-    }
-
-    if (config["pin"]) {
-        this.pin = config["pin"];
-    } else {
-        this.pin = 0; //Default to GPIO pin 0
-    }
-
-    cmdBase = "sudo " + //the codesend executable requires root
+    cmdBase = "sudo " + //the unitec-rfsend executable requires root
         __dirname + //module directory
-        "/codesend -p " + this.pin + " -l " + this.pulselength + " ";
+        "/unitec-rfsend \"";
 }
 
 RFOutletAccessory.prototype = {
@@ -48,10 +36,10 @@ RFOutletAccessory.prototype = {
         var cmd;
 
         if (powerOn) {
-            cmd = cmdBase + this.rf_on;
+            cmd = cmdBase + this.rf_on + "\"";
             state = "on";
         } else {
-            cmd = cmdBase + this.rf_off;
+            cmd = cmdBase + this.rf_off + "\"";
             state = "off";
         }
 
