@@ -24,6 +24,7 @@ function RFOutletAccessory(log, config) {
     //RF transmit inforamtion
     this.rf_on = config["rf_on"];
     this.rf_off = config["rf_off"];
+    this.pin = config["pin"];
 
     cmdBase = "sudo " + //the unitec-rfsend executable requires root
         __dirname + //module directory
@@ -44,6 +45,7 @@ RFOutletAccessory.prototype = {
         }
 
         this.log("Turning " + this.name + " " + state);
+        cmd = cmd + " " + this.pin;
 
         limiter.removeTokens(1, function() {
             exec(cmd, function(error, stdout, stderr) {

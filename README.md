@@ -20,7 +20,6 @@ Supports *lights*, *switches*, and *fans*
 
 - The user which homebridge is run from must be on the list of *sudoers* as the `unitec-rfsend` executable requires root privileges
 - A great guide on how to record RF signals and set up your Pi to transmit can be found [here](https://www.samkear.com/hardware/control-power-outlets-wirelessly-raspberry-pi "Pi 433Mhz Transmitter Guide"). Note: the web portion of the guide is not required
-- **CAUTION**: GPIO pin 0 is hardcoded within the binary.
 
 ## Configuration
 
@@ -30,6 +29,6 @@ Supports *lights*, *switches*, and *fans*
 - `model`: model of the device plugged into the outlet (*optional*, defaults to *blank*)
 - `serial`: serial number of the device plugged into the outlet (*optional*, defaults to *blank*)
 - `rf_on`: RF signal to turn the outlet on (**required**)
-- `rf_off`: RF signal to turn the outlet off (**required**)
+- `pin`: The pin the RF transmitter is connected to (**required**)
 
 See `sample-config.json`
